@@ -8,7 +8,7 @@ import config as C
 import engine
 import dashboard
 
-_icon = C.BASE_DIR / "assets" / "logo.png"
+_icon = C.BASE_DIR  / "logo.png"
 st.set_page_config(page_title="Food Waste AI", page_icon=str(_icon) if _icon.exists() else "🍽️", layout="wide")
 
 if not C.WASTE_MODEL_PATH.exists():
@@ -18,7 +18,7 @@ if not C.WASTE_MODEL_PATH.exists():
 M = engine.metrics()
 
 # ---------------- Sidebar: business assumptions ----------------
-logo = C.BASE_DIR / "assets" / "logo.png"
+logo = C.BASE_DIR  / "logo.png"
 if logo.exists():
     st.sidebar.image(str(logo),use_container_width=True)
 st.sidebar.header("⚙️ Cost assumptions")
@@ -31,7 +31,7 @@ st.sidebar.markdown("---")
 st.sidebar.write(f"**Best model:** {M['best_model']}")
 st.sidebar.write(f"**Test MAE:** {min(r['test_mae'] for r in M['comparison']):.2f} kg")
 
-banner = C.BASE_DIR / "assets" / "banner.jpg"
+banner = C.BASE_DIR  / "banner.jpg"
 if banner.exists():
     st.image(str(banner),use_container_width=True)
 

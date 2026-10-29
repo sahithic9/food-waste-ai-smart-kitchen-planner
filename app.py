@@ -33,7 +33,7 @@ st.sidebar.write(f"**Test MAE:** {min(r['test_mae'] for r in M['comparison']):.2
 
 banner = C.BASE_DIR / "assets" / "banner.jpg"
 if banner.exists():
-    st.image(str(banner), use_container_width=True)
+    pass
 
 tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs(
     ["📈 Dashboard", "🎯 Predict & Recommend", "📅 Weekly Planner", "📂 Batch CSV", "📊 Model Insights", "🔎 Data Explorer"])

@@ -20,7 +20,7 @@ M = engine.metrics()
 # ---------------- Sidebar: business assumptions ----------------
 logo = C.BASE_DIR / "assets" / "logo.png"
 if logo.exists():
-    pass
+    st.sidebar.image(str(logo),use_container_width=True)
 st.sidebar.header("⚙️ Cost assumptions")
 cost = st.sidebar.number_input("Cost of cooked food (₹/kg)", 10.0, 2000.0, C.DEFAULT_COST_PER_KG, 10.0)
 short_cost = st.sidebar.number_input("Penalty for running short (₹/kg)", 10.0, 5000.0, C.DEFAULT_SHORTAGE_COST_PER_KG, 10.0,
@@ -33,7 +33,7 @@ st.sidebar.write(f"**Test MAE:** {min(r['test_mae'] for r in M['comparison']):.2
 
 banner = C.BASE_DIR / "assets" / "banner.jpg"
 if banner.exists():
-    pass
+    st.image(str(banner),use_container_width=True)
 
 tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs(
     ["📈 Dashboard", "🎯 Predict & Recommend", "📅 Weekly Planner", "📂 Batch CSV", "📊 Model Insights", "🔎 Data Explorer"])

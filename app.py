@@ -20,7 +20,7 @@ M = engine.metrics()
 # ---------------- Sidebar: business assumptions ----------------
 logo = C.BASE_DIR / "assets" / "logo.png"
 if logo.exists():
-   #st.sidebar.image(str(logo), use_container_width=True)
+    pass
 st.sidebar.header("⚙️ Cost assumptions")
 cost = st.sidebar.number_input("Cost of cooked food (₹/kg)", 10.0, 2000.0, C.DEFAULT_COST_PER_KG, 10.0)
 short_cost = st.sidebar.number_input("Penalty for running short (₹/kg)", 10.0, 5000.0, C.DEFAULT_SHORTAGE_COST_PER_KG, 10.0,
